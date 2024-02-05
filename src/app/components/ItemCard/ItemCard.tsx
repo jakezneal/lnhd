@@ -1,1 +1,1 @@
-export const ItemCard = () => <h1>Item</h1>;
+export const ItemCard = () => <h1 data-testid="heading">Item</h1>;
