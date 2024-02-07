@@ -67,6 +67,9 @@ devDependencies:
   '@storybook/test':
     specifier: ^7.6.12
     version: 7.6.13(vitest@1.2.2)
+  '@testing-library/jest-dom':
+    specifier: ^6.4.2
+    version: 6.4.2(vitest@1.2.2)
   '@testing-library/react':
     specifier: ^14.2.1
     version: 14.2.1(react-dom@18.2.0)(react@18.2.0)
