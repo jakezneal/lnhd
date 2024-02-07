@@ -2,13 +2,15 @@ import { unstable_noStore as noStore } from 'next/cache';
 import Products from './_components/Products';
 import { serverClient } from '~/trpc/serverClient';
 
+import styles from './index.module.css';
+
 export default async function Home() {
     noStore();
 
     const products = await serverClient.product.getProducts();
 
     return (
-        <main>
+        <main className={styles.container}>
             <Products initialProducts={products} />
         </main>
     );

@@ -1,3 +1,10 @@
+.container {
+    max-width: 150rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
 .products {
     --productsPerRow: 2;
 
@@ -17,5 +24,7 @@
 }
 
 .product {
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
     width: 100%;
 }
