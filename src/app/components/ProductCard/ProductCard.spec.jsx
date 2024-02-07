@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 import { describe, test, expect } from 'vitest';
-import { ItemCard } from './ItemCard';
+import { ProductCard } from './ProductCard';
 
-describe('ItemCard', () => {
+describe('ProductCard', () => {
     test('renders', () => {
-        const { getByTestId } = render(<ItemCard />);
+        const { getByTestId } = render(<ProductCard />);
         const heading = getByTestId('heading');
 
         expect(heading.textContent).toBe('Item');

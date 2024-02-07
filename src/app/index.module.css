@@ -1,0 +1,21 @@
+.products {
+    --productsPerRow: 2;
+
+    display: grid;
+    grid-template-columns: repeat(var(--productsPerRow), minmax(0, 1fr));
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    @media screen and (min-width: 64em) {
+        --productsPerRow: 3;
+    }
+
+    @media screen and (min-width: 90em) {
+        --productsPerRow: 4;
+    }
+}
+
+.product {
+    width: 100%;
+}
