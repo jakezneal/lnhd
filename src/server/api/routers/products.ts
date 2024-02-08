@@ -14,12 +14,12 @@ export const productRouter = createTRPCRouter({
             }),
         )
         .query(async ({ input }) => {
-            const product = products.filter(({ id }) => id === input.id);
+            const [product] = products.filter(({ id }) => id === input.id);
 
             if (!product) {
                 throw new TRPCError({
                     code: 'NOT_FOUND',
-                    message: `No product found with id '${ input.id }'`,
+                    message: `No product found with id '${input.id}'`,
                 });
             }
 
