@@ -5,7 +5,7 @@ type Price = {
 
 export type Product = {
     type: string;
-    brand: String;
+    brand: string;
     description: string;
     imageUrl: string;
     colour: string;

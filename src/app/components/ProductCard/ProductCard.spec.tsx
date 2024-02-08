@@ -1,9 +1,10 @@
-import { render } from '@testing-library/react';
+import { type RenderResult, render } from '@testing-library/react';
 import { describe, test, expect, beforeEach } from 'vitest';
 import { ProductCard } from './ProductCard';
+import { type queries } from '@testing-library/react';
 
 describe('ProductCard', () => {
-    let card;
+    let card: RenderResult<typeof queries, HTMLElement>;
 
     beforeEach(() => {
         card = render(
@@ -29,8 +30,10 @@ describe('ProductCard', () => {
         const { getByTestId } = card;
         const image = getByTestId('image');
 
-        expect(image).toHaveAttribute('src', 'https://via.placeholder.com/100x100');
-        expect(image).toHaveAttribute('alt', 'A T-shirt');
+        // @ts-expect-error src exists
+        expect(image.src).toContain('https://via.placeholder.com/100x100');
+        // @ts-expect-error alt exists
+        expect(image.alt).toContain('A T-shirt');
     });
 
     test('renders the brand', () => {

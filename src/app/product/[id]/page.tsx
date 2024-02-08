@@ -9,26 +9,6 @@ export default async function ProductPage({ params }: { params: { id: string } }
 
     const product = await serverClient.product.getProduct({ id: parseInt(params.id) });
 
-    type ProductDetail = {
-        name: string;
-        value: string;
-    };
-
-    const productDetails = [
-        {
-            name: 'Type',
-            value: 'type',
-        },
-        {
-            name: 'Colour',
-            value: 'colour',
-        },
-        {
-            name: 'Minimum Rental Period',
-            value: 'minimumRentalPeriod',
-        },
-    ] satisfies ProductDetail[];
-
     return (
         <div className={styles.wrapper}>
             <div>
@@ -39,12 +19,15 @@ export default async function ProductPage({ params }: { params: { id: string } }
                 <h2 className={styles.description}>{product.description}</h2>
 
                 <ul className={styles['details-list']}>
-                    {productDetails.map(({ name, value }) => (
-                        <li className={styles['details-item']}>
-                            {/* @ts-ignore */}
-                            <ProductDetail name={name} value={product[value]} />
-                        </li>
-                    ))}
+                    <li className={styles['details-item']}>
+                        <ProductDetail name={'Type'} value={product.type} />
+                    </li>
+                    <li className={styles['details-item']}>
+                        <ProductDetail name={'Colour'} value={product.colour} />
+                    </li>
+                    <li className={styles['details-item']}>
+                        <ProductDetail name={'Minimum Rental Period'} value={product.minimumRentalPeriod} />
+                    </li>
                     <li className={styles['details-item']}>
                         <ProductDetail name={'RRP'} value={product.price.retail} />
                     </li>

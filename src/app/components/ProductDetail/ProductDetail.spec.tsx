@@ -1,17 +1,16 @@
-import { render } from '@testing-library/react';
+import { type RenderResult, render } from '@testing-library/react';
 import { describe, test, expect, beforeEach } from 'vitest';
 import { ProductDetail } from './ProductDetail';
+import { type queries } from '@testing-library/react';
 
 describe('ProductDetail', () => {
-    // @ts-ignore
-    let card;
+    let card: RenderResult<typeof queries, HTMLElement>;
 
     beforeEach(() => {
         card = render(<ProductDetail name={'Type'} value={'T-shirt'} />);
     });
 
     test('renders the name', () => {
-        // @ts-ignore
         const { getByTestId } = card;
         const name = getByTestId('name');
 
@@ -19,7 +18,6 @@ describe('ProductDetail', () => {
     });
 
     test('renders the value', () => {
-        // @ts-ignore
         const { getByTestId } = card;
         const value = getByTestId('value');
 

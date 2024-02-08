@@ -1,7 +1,7 @@
 'use client';
 
 import { api } from '~/trpc/react';
-import { serverClient } from '~/trpc/serverClient';
+import { type serverClient } from '~/trpc/serverClient';
 import { ProductCard } from '../components/ProductCard/ProductCard';
 
 import styles from '../css/home.module.css';
