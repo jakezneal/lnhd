@@ -3,6 +3,7 @@ import { serverClient } from '~/trpc/serverClient';
 
 import styles from '../../css/product.module.css';
 import { ProductDetail } from '~/app/components/ProductDetail/ProductDetail';
+import Image from 'next/image';
 
 export default async function ProductPage({ params }: { params: { id: string } }) {
     noStore();
@@ -12,7 +13,7 @@ export default async function ProductPage({ params }: { params: { id: string } }
     return (
         <div className={styles.wrapper}>
             <div>
-                <img src={product.imageUrl} alt={product.description} className={styles.image} />
+                <Image src={product.imageUrl} alt={product.description} className={styles.image} width={843} height={1127} />
             </div>
             <div className={styles.details}>
                 <h1 className={styles.brand}>{product.brand}</h1>
