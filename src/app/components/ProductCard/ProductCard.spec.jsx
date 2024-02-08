@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { describe, test, expect } from 'vitest';
+import { describe, test, expect, beforeEach } from 'vitest';
 import { ProductCard } from './ProductCard';
 
 describe('ProductCard', () => {
